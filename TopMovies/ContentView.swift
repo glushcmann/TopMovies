@@ -53,31 +53,6 @@ struct MoviesList: View {
     }
 }
 
-//struct MoviePosterImage: View {
-//    @ObservedObject var imageLoader: ImageLoader
-//    @State var isImageLoaded: Bool = false
-//    //let posterSize: PosterStyle.size
-//    
-//    var body: some View {
-//        ZStack {
-//            if self.imageLoader.image != nil {
-//                Image(uiImage: self.imageLoader.image!)
-//                    .resizable()
-//                    .renderingMode(.original)
-//                    //.PosterStyle(loaded: true, size: posterSize)
-//                    .animation(.easeInOut)
-//                    .onAppear {
-//                        self.isImageLoaded = true
-//                }
-//            } else {
-//                Rectangle()
-//                    .foregroundColor(.gray)
-//                    //.PosterStyle(loaded: true, size: posterSize)
-//            }
-//            }
-//    }
-//}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
