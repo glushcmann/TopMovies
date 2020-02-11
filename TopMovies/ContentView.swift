@@ -36,12 +36,17 @@ struct MoviesList: View {
             ForEach(movies) { movie in
                 HStack {
                     MoviePosterImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: movie.posterPath, size: .medium),posterSize: .medium)
-                    VStack(alignment: .leading) {
-                        Text("\(movie.title)").font(.title)
-                        Text("\(movie.releaseDate)")
-                            .font(.subheadline)
-                            .foregroundColor(.primary)
-                            .padding(.bottom)
+                    VStack {
+                        HStack {
+                            PopularityBadge(score: Int(movie.voteAverage), isDisplayed: true)
+                            VStack(alignment: .leading) {
+                                Text("\(movie.title)").font(.title)
+                                Text("\(movie.releaseDate)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.primary)
+                                    .padding(.bottom)
+                            }
+                        }
                         HStack {
 //                            Text(DateFormatter.string(movie.releaseDate))
 //                            Text(formatter.string(from: movie.releaseDate))
@@ -54,7 +59,7 @@ struct MoviesList: View {
                             print("Button Pushed")
                             self.show_modal = true
                         }) {
-                            Text("Show Modal")
+                            Text("Schedule viewing")
                         }.padding(.top).sheet(isPresented: self.$show_modal) {
                              TestView()
                             }
@@ -66,8 +71,8 @@ struct MoviesList: View {
 }
 
 struct TestView: View {
-var body: some View {
-    EKEventWrapper(isShowing: .constant(true))
+    var body: some View {
+        EKEventWrapper(isShowing: .constant(false))
     }
 }
 

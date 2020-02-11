@@ -12,7 +12,7 @@ final class MoviesViewModel: ObservableObject {
     var movieAPI = MovieStore.shared
     
     // input
-    @Published var indexEndpoint: Int = 2
+    @Published var indexEndpoint: Int = 1
     // output
     @Published var movies = [Movie]()
     

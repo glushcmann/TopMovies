@@ -21,15 +21,16 @@ struct EKEventWrapper: UIViewControllerRepresentable {
     var theEvent = EKEvent.init(eventStore: eventStore)
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<EKEventWrapper>) -> EKEventEditViewController {
-
+        
         let calendar = EKCalendar.init(for: .event, eventStore: eventStore)
 
         theEvent.startDate = Date()
         theEvent.endDate = Date()
-        theEvent.title = "Meeting"
+        theEvent.title = "Movie"
         theEvent.calendar = calendar
 
         let controller = EKEventEditViewController()
+//        let controller = UIViewControllerType()
         controller.event = theEvent
         controller.eventStore = eventStore
         controller.editViewDelegate = context.coordinator
@@ -40,7 +41,6 @@ struct EKEventWrapper: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: EKEventWrapper.UIViewControllerType, context: UIViewControllerRepresentableContext<EKEventWrapper>) {
         //
     }
-
 
     func makeCoordinator() -> Coordinator {
         return Coordinator(isShowing: $isShowing)

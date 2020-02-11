@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import EventKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -32,6 +33,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        let eventStore = EKEventStore()
+        
+        eventStore.requestAccess(to: EKEntityType.event, completion:
+                   {(granted, error) in
+                if !granted {
+                    print("Access to store not granted")
+                }
+        })
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
