@@ -25,6 +25,7 @@
 		110B86D323EDC23D00D51523 /* PosterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110B86D223EDC23D00D51523 /* PosterStyle.swift */; };
 		110B86D623EDC2DC00D51523 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110B86D523EDC2DC00D51523 /* ImageLoader.swift */; };
 		110B86D923F1B2A500D51523 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 110B86D823F1B2A500D51523 /* Default-568h@2x.png */; };
+		110B86DB23F1EABE00D51523 /* EKEventWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110B86DA23F1EABE00D51523 /* EKEventWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		110B86D223EDC23D00D51523 /* PosterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterStyle.swift; sourceTree = "<group>"; };
 		110B86D523EDC2DC00D51523 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		110B86D823F1B2A500D51523 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		110B86DA23F1EABE00D51523 /* EKEventWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKEventWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				110B869E23ECA0D100D51523 /* SceneDelegate.swift */,
 				110B86CD23EDC1B200D51523 /* View */,
 				110B86C023ECA16600D51523 /* Model */,
+				110B86DC23F2BD8F00D51523 /* ScheduleService */,
 				110B86C523ECA19F00D51523 /* MovieService */,
 				110B86A223ECA0D600D51523 /* Assets.xcassets */,
 				110B86A723ECA0D600D51523 /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 				110B86CE23EDC20300D51523 /* PopularityBadge.swift */,
 				110B86D023EDC22000D51523 /* MoviePosterImage.swift */,
 				110B86D223EDC23D00D51523 /* PosterStyle.swift */,
+				110B86DA23F1EABE00D51523 /* EKEventWrapper.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -186,6 +190,13 @@
 				110B86C823ECA1E300D51523 /* Protocol */,
 			);
 			name = MovieService;
+			sourceTree = "<group>";
+		};
+		110B86DC23F2BD8F00D51523 /* ScheduleService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScheduleService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 			files = (
 				110B869D23ECA0D100D51523 /* AppDelegate.swift in Sources */,
 				110B869F23ECA0D100D51523 /* SceneDelegate.swift in Sources */,
+				110B86DB23F1EABE00D51523 /* EKEventWrapper.swift in Sources */,
 				110B86CC23ECB5E500D51523 /* ImageService.swift in Sources */,
 				110B86C423ECA18B00D51523 /* MovieStoreAPIError.swift in Sources */,
 				110B86BF23ECA14F00D51523 /* Movie.swift in Sources */,

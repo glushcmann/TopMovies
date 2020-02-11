@@ -13,10 +13,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(moviesViewModel.indexEndpoint)")
-            Stepper("Enter your index" , value:
-                $moviesViewModel.indexEndpoint, in: 0...3)
-                .padding()
             Picker("", selection: $moviesViewModel.indexEndpoint) {
                 Text("\(Endpoint(index: 0)!.description)").tag(0)
                 Text("\(Endpoint(index: 1)!.description)").tag(1)
@@ -31,7 +27,10 @@ struct ContentView: View {
 
 struct MoviesList: View {
     var movies: [Movie]
-    
+    let formatter = DateFormatter()
+    @State private var show_modal: Bool = false
+
+        
     var body: some View {
         List {
             ForEach(movies) { movie in
@@ -39,19 +38,39 @@ struct MoviesList: View {
                     MoviePosterImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: movie.posterPath, size: .medium),posterSize: .medium)
                     VStack(alignment: .leading) {
                         Text("\(movie.title)").font(.title)
+                        Text("\(movie.releaseDate)")
+                            .font(.subheadline)
+                            .foregroundColor(.primary)
+                            .padding(.bottom)
                         HStack {
-//                          Text(Formatter.string(from: movie.releaseDate))
+//                            Text(DateFormatter.string(movie.releaseDate))
+//                            Text(formatter.string(from: movie.releaseDate))
 //                              .font(.subheadline)
 //                              .foregroundColor(.primary)
                             Text("\(movie.overview)")
                                 .lineLimit(3)
                         }
+                        Button(action: {
+                            print("Button Pushed")
+                            self.show_modal = true
+                        }) {
+                            Text("Show Modal")
+                        }.padding(.top).sheet(isPresented: self.$show_modal) {
+                             TestView()
+                            }
                     }
                 }
             }
         }
     }
 }
+
+struct TestView: View {
+var body: some View {
+    EKEventWrapper(isShowing: .constant(true))
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
